@@ -10,14 +10,18 @@ CONFIG += c++17
 
 SOURCES += \
     CardPanel.cpp \
+    cards.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    player.cpp
 
 HEADERS += \
     Card.h \
     CardPanel.h \
+    cards.h \
     const.h \
-    mainwindow.h
+    mainwindow.h \
+    player.h
 
 FORMS += \
     mainwindow.ui

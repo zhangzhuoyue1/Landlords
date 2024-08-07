@@ -3,7 +3,7 @@
 #include <QWidget>
 #include <QPixmap>
 #include "Card.h"
-
+#include "player.h"
 /*
  * 卡牌窗口类
 */
@@ -21,8 +21,12 @@ public:
 	QPixmap getImage();
 
     //设置牌的属性
-    void setCard(Card::CardPoint point,Card::CardSuit suit);
+    void setCard(Card card);
     Card getCard();
+
+    //设置牌的所有者
+    void setOwner(std::unique_ptr<Player> player);
+    std::unique_ptr<Player> getPlayer();
 
     //设置牌的正反面
     void setFontSide(bool isFont);
@@ -37,6 +41,7 @@ private:
     bool m_isFront;     //记录当前是否为正面
     bool m_isSelected;    //是否被选中
     Card m_card;        //牌的属性信息
+    std::unique_ptr<Player> m_player;   //当前牌的所有者
 signals:
     emit void sig_cardSelected(); //通知窗口被选中
 
