@@ -20,9 +20,11 @@ class UserPlayer : public Player
     Q_OBJECT
 public:
     explicit UserPlayer(QObject *parent = nullptr);
-
+    explicit UserPlayer(QString name,QObject *parent = nullptr);
     void prepareCallLord() override;
     void preparePlayHand() override;
+    virtual void thinkCallLord()override;           //考虑叫地主
+    virtual void thinkPlayHand()override;           //考虑出牌
 
 signals:
     void sig_startCountDown();

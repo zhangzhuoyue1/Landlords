@@ -16,7 +16,7 @@
  *****************************************************************************/
 
 // 宏定义方便使用日志记录
-#define LOG(message) Logger::getInstance().log(__FILE__, __FUNCTION__, message)
+#define Log(message) Logger::getInstance().log(__FILE__, __FUNCTION__, message)
 
 class Logger
 {

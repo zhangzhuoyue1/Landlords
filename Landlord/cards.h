@@ -2,7 +2,7 @@
 #define CARDS_H
 #include "Card.h"
 #include <set>
-#include <list>
+
 
 /******************************************************************************
  *
@@ -34,6 +34,7 @@ public:
     int pointCount(int point);                  //计算指定点数扑克牌的张数
     int minPoint();                             //得到牌的最小点数
     int maxPoint();                             //得到牌的最大点数
+    void displayCards();                        //打印牌堆
 private:
     std::set<Card> m_cards;
 };

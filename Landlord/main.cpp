@@ -17,9 +17,9 @@ void CardsTest(){
     cards->removeCard(card);
     qDebug()<<cards->minPoint();
     qDebug()<<cards->maxPoint();
-    cards->clear();
+    //cards->clear();
     qDebug()<<cards->cardCount();
-    LOG("This is a test log message.");
+    cards->displayCards();
 
 }
 

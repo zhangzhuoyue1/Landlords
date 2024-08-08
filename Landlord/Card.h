@@ -38,7 +38,11 @@ public:
         Card_BJ = 17,	//´óÍõ
 		Card_End,
 	};
-    Card():m_point(Card_Begin),m_suit(Suit_Begin){}
+    Card(){}
+    Card(CardPoint point,CardSuit suit){
+        setPoint(point);
+        setSuit(suit);
+    }
 	~Card(){}
 
 	void setPoint(CardPoint point){ m_point = point; }

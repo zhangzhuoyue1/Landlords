@@ -18,6 +18,7 @@ class Robot : public Player
     Q_OBJECT
 public:
     explicit Robot(QObject *parent = nullptr);
+    explicit Robot(QString name,QObject *parent = nullptr);
 
     void prepareCallLord() override;
     void preparePlayHand() override;

@@ -11,10 +11,12 @@ CONFIG += c++17
 SOURCES += \
     CardPanel.cpp \
     cards.cpp \
+    gamecontrol.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
     robot.cpp \
+    scorepanel.cpp \
     userplayer.cpp
 
 HEADERS += \
@@ -22,14 +24,16 @@ HEADERS += \
     CardPanel.h \
     Logger.h \
     cards.h \
-    const.h \
+    gamecontrol.h \
     mainwindow.h \
     player.h \
     robot.h \
+    scorepanel.h \
     userplayer.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    scorepanel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

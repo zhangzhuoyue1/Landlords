@@ -65,38 +65,12 @@ bool Cards::isExistCards(const Cards &cards)
 
 Card Cards::takeRandomCard()
 {
-    qDebug()<<"开始发牌";
-    if (m_cards.size() == 54) { // Assuming a standard deck size
-        qDebug() << "所有的牌都已经发出，牌库中已经没有牌";
-        return Card();
-    }
-    Card card;
-    while(true){
-        Card tmp_card;
-
-        int point=QRandomGenerator::global()->bounded(3,18);
-        if (point == 16) {
-            // 小王只有一张
-            tmp_card.setPoint(Card::Card_SJ);
-            tmp_card.setSuit(Card::King);
-        } else if (point == 17) {
-            // 大王只有一张
-            tmp_card.setPoint(Card::Card_BJ);
-            tmp_card.setSuit(Card::King);
-        } else {
-            int suit = QRandomGenerator::global()->bounded(0, 4);
-            tmp_card.setPoint(static_cast<Card::CardPoint>(point));
-            tmp_card.setSuit(static_cast<Card::CardSuit>(suit));
-        }
-
-        if (!isExistCard(tmp_card)) {
-            m_cards.insert(tmp_card);
-            card = tmp_card;
-            qDebug() << "发出一张牌 point:" << point << " suit:" << card.getSuit();
-            break;
-        }
-    }
-
+    // 生成一个随机数
+    int num = QRandomGenerator::global()->bounded(m_cards.size());
+    auto it = m_cards.begin();
+    for(int i=0; i<num; ++i, ++it);
+    Card card = *it;
+    m_cards.erase(*it);
     return card;
 }
 
@@ -131,4 +105,13 @@ int Cards::maxPoint()
     --it;
     Card card=*it;
     return card.getPoint();
+}
+
+void Cards::displayCards()
+{
+    int i=1;
+    for(auto it=m_cards.begin();it!=m_cards.end();it++){
+        Card card=*it;
+        qDebug()<<i<<" point :"<<card.getPoint()<<" suit: "<<card.getSuit();
+    }
 }

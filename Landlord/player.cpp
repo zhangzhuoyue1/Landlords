@@ -47,6 +47,11 @@ void Player::setDirection(Direction direct)
     m_direct=direct;
 }
 
+void Player::setSex(Sex sex)
+{
+    m_sex=sex;
+}
+
 QString Player::getName()
 {
     return m_name;
@@ -87,10 +92,13 @@ Cards Player::getCards()
     return m_cards;
 }
 
+
 Player::Sex Player::getSex()
 {
     return m_sex;
 }
+
+
 
 Player *Player::getPendPlayer()
 {

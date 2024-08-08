@@ -6,6 +6,12 @@ Robot::Robot(QObject *parent)
     m_type=Player::Robot;
 }
 
+Robot::Robot(QString name, QObject *parent)
+    :Player(name,parent)
+{
+
+}
+
 void Robot::prepareCallLord()
 {
 

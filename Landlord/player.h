@@ -50,6 +50,7 @@ public:
     void setPrePlayer(Player* player);
     void setNextPlayer(Player* player);
     void setDirection(Direction direct);
+    void setSex(Sex sex);
 
     QString getName();
     Type getType();
