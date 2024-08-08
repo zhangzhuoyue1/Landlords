@@ -13,15 +13,20 @@ SOURCES += \
     cards.cpp \
     main.cpp \
     mainwindow.cpp \
-    player.cpp
+    player.cpp \
+    robot.cpp \
+    userplayer.cpp
 
 HEADERS += \
     Card.h \
     CardPanel.h \
+    Logger.h \
     cards.h \
     const.h \
     mainwindow.h \
-    player.h
+    player.h \
+    robot.h \
+    userplayer.h
 
 FORMS += \
     mainwindow.ui

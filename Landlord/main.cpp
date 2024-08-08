@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+#include "Logger.h"
 #include <QApplication>
 #include "cards.h"
 #include <QDebug>
@@ -19,6 +19,7 @@ void CardsTest(){
     qDebug()<<cards->maxPoint();
     cards->clear();
     qDebug()<<cards->cardCount();
+    LOG("This is a test log message.");
 
 }
 
