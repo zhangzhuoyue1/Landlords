@@ -10,10 +10,12 @@ CONFIG += c++17
 
 SOURCES += \
     CardPanel.cpp \
+    buttongroup.cpp \
     cards.cpp \
     gamecontrol.cpp \
     main.cpp \
     mainwindow.cpp \
+    mybutton.cpp \
     player.cpp \
     robot.cpp \
     scorepanel.cpp \
@@ -23,15 +25,18 @@ HEADERS += \
     Card.h \
     CardPanel.h \
     Logger.h \
+    buttongroup.h \
     cards.h \
     gamecontrol.h \
     mainwindow.h \
+    mybutton.h \
     player.h \
     robot.h \
     scorepanel.h \
     userplayer.h
 
 FORMS += \
+    buttongroup.ui \
     mainwindow.ui \
     scorepanel.ui
 
@@ -40,4 +45,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES +=
+RESOURCES += \
+    res.qrc

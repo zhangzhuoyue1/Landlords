@@ -12,3 +12,8 @@ ScorePanel::~ScorePanel()
 {
     delete ui;
 }
+
+void ScorePanel::setUserScore(int score)
+{
+
+}
