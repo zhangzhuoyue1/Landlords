@@ -51,9 +51,9 @@ public:
     Cards getSurplusCards();    // 得到剩余的牌
     void initAllCards();        //初始化所有的牌信息到容器中
     void initPlayer();          //初始化玩家
-    Player* getLeftRobot();      //获取玩家实例
-    Player* getRightRobot();
-    Player* getUserPlayer();
+    Robot* getLeftRobot();      //获取玩家实例
+    Robot* getRightRobot();
+    UserPlayer* getUserPlayer();
     Player* getPendPlayer();
     Cards getPendCards();       //获取玩家刚打出的牌
     void setCurPlayer(Player* cur_player);

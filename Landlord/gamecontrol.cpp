@@ -75,17 +75,17 @@ void GameControl::initPlayer()
 
 }
 
-Player *GameControl::getLeftRobot()
+Robot *GameControl::getLeftRobot()
 {
     return m_leftRobot;
 }
 
-Player *GameControl::getRightRobot()
+Robot *GameControl::getRightRobot()
 {
     return m_RightRobot;
 }
 
-Player *GameControl::getUserPlayer()
+UserPlayer *GameControl::getUserPlayer()
 {
     return m_userPlayer;
 }

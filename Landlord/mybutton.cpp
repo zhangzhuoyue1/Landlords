@@ -1,5 +1,5 @@
 #include "mybutton.h"
-
+#include "Logger.h"
 #include <QPainter>
 #include <qevent.h>
 
@@ -17,6 +17,7 @@ void MyButton::setImage(QString normal, QString hover, QString pressed)
     m_pressed=pressed;
 
     m_pixmap.load(m_normal);
+    update();
 }
 
 
@@ -24,7 +25,8 @@ void MyButton::mousePressEvent(QMouseEvent *event)
 {
     if(event->button()==Qt::LeftButton){
         //切换图片
-        m_pixmap.load(m_pressed);
+        if(!m_pixmap.load(m_pressed))
+            Log("Failed to load pressed");
         update();
     }
     return QPushButton::mousePressEvent(event);
@@ -42,22 +44,24 @@ void MyButton::mouseReleaseEvent(QMouseEvent *event)
 
 void MyButton::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event);
     QPainter p(this);
     p.drawPixmap(rect(),m_pixmap);
 
-    return QPushButton::paintEvent(event);
 }
 
 void MyButton::enterEvent(QEnterEvent *event)
 {
+    Q_UNUSED(event);
     m_pixmap.load(m_hover);
     update();
-    return QPushButton::enterEvent(event);
 }
 
 void MyButton::leaveEvent(QEvent *event)
 {
-
+    Q_UNUSED(event);
+    m_pixmap.load(m_normal);
+    update();
 }
 
 
